@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KHANUM — Curated Urdu Books</title>
+  <meta name="description" content="Hand-picked Urdu novels delivered across Pakistan. Order via Instagram — Namal, Peer-e-Kamil, and 50+ titles in stock.">
+  <meta name="theme-color" content="#7A3E48">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-inner">
+      <a href="#" class="logo"><span id="brandName">KHANUM</span></a>
+      <div class="header-actions">
+        <button class="cart-btn" id="cartBtn" aria-label="Open cart">
+          <span>🛒 Cart</span>
+          <span class="cart-count" id="cartCount" data-count="0">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">📚 52 titles in stock</div>
+      <h1>Curated Urdu books,<br><em>hand-packed with care</em></h1>
+      <p>Har kitab carefully chuni gayi. Add to cart, then DM us on Instagram to confirm your order. Pakistan-wide delivery.</p>
+      <div class="hero-cta">
+        <button class="btn btn-primary" id="heroShopBtn">Browse collection</button>
+        <button class="btn btn-secondary" id="heroIgBtn">DM on Instagram</button>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-books" id="heroBooks"></div>
+    </div>
+  </section>
+
+  <div class="trust-bar">
+    <div class="trust-items">
+      <div class="trust-item">
+        <div class="icon">🇵🇰</div>
+        <strong>Pakistan-wide</strong>
+        <span>Delivery everywhere</span>
+      </div>
+      <div class="trust-item">
+        <div class="icon">💌</div>
+        <strong>Hand-packed</strong>
+        <span>Every order with care</span>
+      </div>
+      <div class="trust-item">
+        <div class="icon">📱</div>
+        <strong>Instagram orders</strong>
+        <span>Quick & personal</span>
+      </div>
+      <div class="trust-item">
+        <div class="icon">✅</div>
+        <strong>All in stock</strong>
+        <span>52 novels ready</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="section-header">
+      <h2>Mood bundles</h2>
+      <p>Not sure what to pick? Tap a bundle to add the whole set to your cart.</p>
+    </div>
+    <div class="bundles-scroll" id="bundlesScroll"></div>
+  </section>
+
+  <section class="section" id="catalog">
+    <div class="section-header">
+      <h2>Full catalog</h2>
+      <p>52 carefully chosen Urdu novels — bestsellers, classics & hidden gems.</p>
+    </div>
+
+    <div class="catalog-toolbar">
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input type="search" id="searchInput" placeholder="Search by title or author…" autocomplete="off">
+      </div>
+      <div class="filter-pills" id="filterPills"></div>
+    </div>
+
+    <div class="book-grid" id="bookGrid"></div>
+  </section>
+
+  <section class="section">
+    <div class="how-to">
+      <div class="section-header" style="margin-bottom:0">
+        <h2>How to order</h2>
+        <p>Simple, warm, no pressure — bas 3 steps.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <h3>Add to cart</h3>
+          <p>Pick your books from our catalog. Use mood bundles for quick gift sets.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <h3>DM on Instagram</h3>
+          <p>Tap checkout — your order copies automatically. Message us at <strong id="instagramHandle">@khanumm.official</strong> to confirm.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <h3>Receive & enjoy</h3>
+          <p>We confirm price + delivery (<span id="deliveryDays">3–5</span> days), you pay, and we hand-pack & ship across Pakistan.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="logo" data-brand>KHANUM</div>
+      <p id="deliveryNote">Pakistan-wide delivery · Hand-packed with care</p>
+      <div class="footer-links">
+        <a data-instagram href="#">Instagram</a>
+        <a href="#catalog">Shop</a>
+        <a href="#" id="footerCartLink">Cart</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cart drawer -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart">
+    <div class="cart-header">
+      <h2>Your cart</h2>
+      <button class="close-btn" id="closeCart" aria-label="Close cart">×</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-footer">
+      <div class="cart-summary">
+        <span>Total</span>
+        <span id="cartTotal">0 books</span>
+      </div>
+      <button class="btn btn-instagram" id="checkoutBtn">
+        📸 Text us on Instagram to confirm
+      </button>
+      <button class="btn btn-whatsapp" id="whatsappBtn" style="display:none">
+        💬 Order on WhatsApp
+      </button>
+      <p class="checkout-note">
+        Your order message will be <strong>copied automatically</strong>. Paste it in our Instagram DM — we'll confirm price & delivery. Payment via JazzCash / EasyPaisa / bank transfer.
+      </p>
+    </div>
+  </aside>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/books.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    document.getElementById("footerCartLink").addEventListener("click", (e) => {
+      e.preventDefault();
+      document.getElementById("cartBtn").click();
+    });
+  </script>
+</body>
+</html>

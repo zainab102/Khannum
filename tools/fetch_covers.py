@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""Fetch real book covers into site/images/covers/<slug>.jpg.
+"""Fetch real book covers into images/covers/<slug>.jpg.
 
 Sources, in order of preference:
   1. Known-good direct URLs (hand-verified).
   2. OpenLibrary search -> covers.openlibrary.org.
 
 Any book we can't confidently match keeps its placeholder; the shop owner can
-drop their own photo into site/images/covers/<slug>.jpg later (same filename).
+drop their own photo into images/covers/<slug>.jpg later (same filename).
 """
 import json
 import os
@@ -17,8 +17,8 @@ import urllib.parse
 import urllib.request
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-COVERS_DIR = os.path.join(HERE, "..", "site", "images", "covers")
-BOOKS_JS = os.path.join(HERE, "..", "site", "js", "books.js")
+COVERS_DIR = os.path.join(HERE, "..", "images", "covers")
+BOOKS_JS = os.path.join(HERE, "..", "js", "books.js")
 
 UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
       "AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.0 Safari/605.1.15")

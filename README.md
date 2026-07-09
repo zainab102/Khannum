@@ -4,7 +4,7 @@ Practical deliverables for KHANUM's organic Instagram video and sales strategy.
 
 ## Quick start
 
-1. **Bio link page:** Open [`site/index.html`](site/index.html) in a browser — cart + Instagram checkout for all 52 books. Update `site/js/config.js` with your Instagram handle before hosting.
+1. **Bio link page:** Open [`index.html`](index.html) in a browser — cart + Instagram checkout for all 52 books. Update `js/config.js` with your Instagram handle before hosting.
 2. **Today:** Set up bio and highlights → [`instagram/bio-and-highlights.md`](instagram/bio-and-highlights.md)
 3. **Post daily:** Follow the 30-day plan → [`content/30-day-content-calendar.md`](content/30-day-content-calendar.md)
 4. **This weekend:** Batch-film Week 1 Reels → [`content/week-1-filming-scripts.md`](content/week-1-filming-scripts.md)
@@ -18,10 +18,10 @@ Practical deliverables for KHANUM's organic Instagram video and sales strategy.
 
 ```
 khanum/
-├── site/                          # Bio-link shop page (host on Netlify / GitHub Pages)
-│   ├── index.html
-│   ├── css/styles.css
-│   └── js/                        # config.js, books.js, app.js
+├── index.html                     # Bio-link shop page (host on Vercel / Netlify)
+├── css/styles.css
+├── js/                            # config.js, books.js, app.js
+├── images/covers/                 # Book cover photos
 ├── instagram/
 │   ├── bio-and-highlights.md      # Bio copy, link setup, highlight covers
 │   └── highlights/                # Slide-by-slide content for each highlight
@@ -77,13 +77,13 @@ khanum/
 
 ## Book cover photos
 
-Cover images live in **`site/images/covers/`**. For each book the shop shows, in order:
+Cover images live in **`images/covers/`**. For each book the shop shows, in order:
 
-1. Your own photo at `site/images/covers/<name>.jpg` (best — never breaks)
+1. Your own photo at `images/covers/<name>.jpg` (best — never breaks)
 2. A web cover (for a few titles)
 3. A coloured placeholder tile
 
-**To add a photo:** take/scan the cover, save it as a `.jpg` with the exact filename below, and drop it into `site/images/covers/`. Refresh the page — done. (Portrait ~400×600px looks best.)
+**To add a photo:** take/scan the cover, save it as a `.jpg` with the exact filename below, and drop it into `images/covers/`. Refresh the page — done. (Portrait ~400×600px looks best.)
 
 7 titles already have real covers: `namal`, `peer-e-kamil`, `raja-gidh`, `amar-bail`, `ishq-e-atish`, `zindagi-gulzar-hai`, `seerat-un-nabi-saw`.
 
@@ -147,4 +147,4 @@ Search for `[BRACKETS]` across files:
 - `[PRICE]` — book prices in Rs.
 - `[X–X]` — delivery timeline
 - `[ACCOUNT DETAILS]` — payment info
-- `@khanumm.official` — Instagram handle (already set in `site/js/config.js`)
+- `@khanumm.official` — Instagram handle (already set in `js/config.js`)
